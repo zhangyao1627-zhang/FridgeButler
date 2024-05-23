@@ -28,8 +28,8 @@ fastlane/screenshots
 fastlane/test_output
 
 # Custom directories to ignore
-Assets.xcassets/
-FridgeButler.xcdatamodeld/
-FridgeButler.xcodeproj/
-Preview\ Content/Preview\ A/
+# Assets.xcassets/
+# FridgeButler.xcdatamodeld/
+# FridgeButler.xcodeproj/
+# Preview\ Content/Preview\ A/
 
