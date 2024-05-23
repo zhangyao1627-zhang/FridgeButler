@@ -1,27 +1,35 @@
-# Xcode
+# Ignore Xcode specific files
 build/
 DerivedData/
 *.xcworkspace
 xcuserdata/
 *.xcuserstate
-*.xcscmblueprint
+*.xcscheme
+*.xccheckout
 
-# macOS
+# Ignore macOS specific files
 .DS_Store
 
-# Swift Package Manager
+# Ignore Swift Package Manager build artifacts
 /.build/
 Packages
 
-# CocoaPods
+# Ignore CocoaPods build artifacts
 Pods/
 Podfile.lock
 
-# Carthage
+# Ignore Carthage build artifacts
 Carthage/Build/
 
-# Fastlane
+# Ignore Fastlane build artifacts
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+# Custom directories to ignore
+Assets.xcassets/
+FridgeButler.xcdatamodeld/
+FridgeButler.xcodeproj/
+Preview\ Content/Preview\ A/
+
