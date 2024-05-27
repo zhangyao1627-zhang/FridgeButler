@@ -33,3 +33,6 @@ fastlane/test_output
 # FridgeButler.xcodeproj/
 # Preview\ Content/Preview\ A/
 
+# Google API
+GoogleService-Info.plist
+

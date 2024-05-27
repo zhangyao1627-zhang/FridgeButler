@@ -5,4 +5,5 @@ target 'FridgeButler' do
   use_frameworks!
   pod 'FirebaseCore'
   pod 'FirebaseDatabase'
+  pod 'FirebaseFirestore'
 end
