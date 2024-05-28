@@ -16,19 +16,27 @@ struct RecipeDetailView: View {
             VStack(alignment: .leading) {
                 if let recipeDetail = fetchData.recipeDetail {
                     Text(recipeDetail.title)
-                        .font(.largeTitle)
-                        .padding(.top)
-                    
+                                .font(.title) // Smaller font size
+                                .fontWeight(.bold)
+                                .padding(.top)
+                                .padding(.horizontal)
+                            
                     if let url = URL(string: recipeDetail.image) {
                         AsyncImage(url: url)
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 200) // Set the size of the image here
+                            .frame(maxWidth: 300, maxHeight: 200) // Smaller image size
                             .clipped()
                             .padding(.vertical)
+                            .padding(.horizontal)
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
-                    
-                    HTMLText(html: recipeDetail.summary)
+            
+                    HTMLTextR(html: recipeDetail.summary)
                         .padding(.horizontal)
+                        .frame(maxWidth: .infinity)
+                        .background(Color(UIColor.systemBackground))
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
                 } else if fetchData.isLoading {
                     ProgressView()
                         .padding()
@@ -40,7 +48,7 @@ struct RecipeDetailView: View {
                     Text("No data available")
                         .padding()
                 }
-            }
+            }.padding()
         }
         .onAppear {
             fetchData.fetchRecipeDetail(recipeId: recipeId)
@@ -92,27 +100,24 @@ class ImageLoader: ObservableObject {
     }
 }
 
-struct HTMLText: UIViewRepresentable {
-    let html: String
 
-    func makeUIView(context: Context) -> UILabel {
-        let label = UILabel()
-        label.numberOfLines = 0
-        return label
-    }
+struct HTMLTextR: View {
+    var html: String
 
-    func updateUIView(_ uiView: UILabel, context: Context) {
-        let modifiedFont = String(format:"<span style=\"font-family: -apple-system; font-size: \(UIFont.preferredFont(forTextStyle: .body).pointSize)\">%@</span>", html)
-        
-        if let data = modifiedFont.data(using: .unicode) {
-            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                .documentType: NSAttributedString.DocumentType.html,
-                .characterEncoding: String.Encoding.utf8.rawValue
-            ]
-            
-            if let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) {
-                uiView.attributedText = attributedString
+    var body: some View {
+        if let nsAttributedString = try? NSAttributedString(data: Data(html.utf8), options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil),
+           let attributedString = try? AttributedString(nsAttributedString) {
+            ScrollView {
+                Text(attributedString)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.body)
             }
+        } else {
+            Text(html)
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.body)
         }
     }
 }
