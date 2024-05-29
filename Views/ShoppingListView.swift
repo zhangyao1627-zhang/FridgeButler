@@ -8,13 +8,36 @@
 import SwiftUI
 
 struct ShoppingListView: View {
+    @State private var newItem: String = ""
+    @State private var shoppingList: [String] = []
+
     var body: some View {
-        VStack {
-            Text("This is Shopping List View")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-            // Add more unique content and layout for Shopping List View here
+        NavigationView {
+            VStack {
+                HStack {
+                    TextField("Enter new item", text: $newItem)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    Button(action: addItem) {
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundColor(.blue)
+                            .font(.title)
+                    }
+                    .padding()
+                }
+                List {
+                    ForEach(shoppingList, id: \.self) { item in
+                        Text(item)
+                    }
+                }
+                .navigationBarTitle("Shopping List")
+            }
         }
-        .padding()
+    }
+
+    private func addItem() {
+        guard !newItem.isEmpty else { return }
+        shoppingList.append(newItem)
+        newItem = ""
     }
 }

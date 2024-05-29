@@ -24,7 +24,6 @@
 		59908F622BFF10CB000C14A3 /* ShoppingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59908F612BFF10CB000C14A3 /* ShoppingListView.swift */; };
 		59908F642BFF13A1000C14A3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 59908F632BFF13A1000C14A3 /* .gitignore */; };
 		59908F662BFF1414000C14A3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 59908F652BFF1414000C14A3 /* README.md */; };
-		599DAD982BFFCD3600FF6196 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 599DAD972BFFCD3600FF6196 /* GoogleService-Info.plist */; };
 		F8F0FC092BFFC1D5001E1BFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0FC082BFFC1D4001E1BFE /* AppDelegate.swift */; };
 		FE900C63F78D25DD89F19FC3 /* Pods_FridgeButler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94716A70E90F5F6D811A3AA2 /* Pods_FridgeButler.framework */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 		59908F612BFF10CB000C14A3 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
 		59908F632BFF13A1000C14A3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		59908F652BFF1414000C14A3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		599DAD972BFFCD3600FF6196 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93B05FD1CEE0D86980A4058C /* Pods-FridgeButler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeButler.debug.xcconfig"; path = "Target Support Files/Pods-FridgeButler/Pods-FridgeButler.debug.xcconfig"; sourceTree = "<group>"; };
 		94716A70E90F5F6D811A3AA2 /* Pods_FridgeButler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FridgeButler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F0FC082BFFC1D4001E1BFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 		59908F3A2BFF0E89000C14A3 = {
 			isa = PBXGroup;
 			children = (
-				599DAD972BFFCD3600FF6196 /* GoogleService-Info.plist */,
 				59908F5A2BFF1060000C14A3 /* DataModels */,
 				59908F592BFF1056000C14A3 /* Views */,
 				59908F462BFF0E89000C14A3 /* FridgeButlerApp.swift */,
@@ -209,7 +206,6 @@
 			files = (
 				59908F4E2BFF0E8A000C14A3 /* Preview Assets.xcassets in Resources */,
 				59908F642BFF13A1000C14A3 /* .gitignore in Resources */,
-				599DAD982BFFCD3600FF6196 /* GoogleService-Info.plist in Resources */,
 				59908F662BFF1414000C14A3 /* README.md in Resources */,
 				59908F4B2BFF0E8A000C14A3 /* Assets.xcassets in Resources */,
 			);
