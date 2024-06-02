@@ -33,7 +33,7 @@
 		0254779C2C0CE47C001E346F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		25E1690B552838385B24B9DF /* Pods-FridgeButler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeButler.release.xcconfig"; path = "Target Support Files/Pods-FridgeButler/Pods-FridgeButler.release.xcconfig"; sourceTree = "<group>"; };
 		595A25052C040307009F0AB6 /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = SOURCE_ROOT; };
-		595A25072C040372009F0AB6 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
+		595A25072C040372009F0AB6 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		595A25092C040553009F0AB6 /* GroceryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryDetailView.swift; sourceTree = "<group>"; };
 		595FB0A72C04FB9600BE3AB7 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		595FB0A92C04FBBE00BE3AB7 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };

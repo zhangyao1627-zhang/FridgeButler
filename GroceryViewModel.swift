@@ -74,6 +74,7 @@ class GroceryViewModel: ObservableObject {
         do {
             print("Enter Here for details")
             let _ = try db.collection("groceryItems").document(item.id).setData(from: item)
+            groceryList.append(item)
         } catch {
             print("Error adding grocery item: \(error)")
         }
@@ -85,6 +86,13 @@ class GroceryViewModel: ObservableObject {
             db.collection("groceryItems").document(item.id).delete { error in
                 if let error = error {
                     print("Error removing document: \(error)")
+                } else {
+                    // Remove the item from the local list
+                    DispatchQueue.main.async {
+                        if let index = self.groceryList.firstIndex(where: { $0.id == item.id }) {
+                            self.groceryList.remove(at: index)
+                        }
+                    }
                 }
             }
         }
@@ -93,7 +101,18 @@ class GroceryViewModel: ObservableObject {
     // Update a GroceryListItem
     func updateGroceryItem(_ item: GroceryListItem) {
         do {
-            let _ = try db.collection("groceryItems").document(item.id).setData(from: item)
+            try db.collection("groceryItems").document(item.id).setData(from: item) { error in
+                if let error = error {
+                    print("Error updating grocery item: \(error)")
+                } else {
+                    // Update the item in the local list
+                    DispatchQueue.main.async {
+                        if let index = self.groceryList.firstIndex(where: { $0.id == item.id }) {
+                            self.groceryList[index] = item
+                        }
+                    }
+                }
+            }
         } catch {
             print("Error updating grocery item: \(error)")
         }
