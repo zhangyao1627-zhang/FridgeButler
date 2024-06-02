@@ -47,7 +47,7 @@ struct IngredientLabel: Hashable {
 
 struct ShoppingListItem: Identifiable, Codable {
     var id: String = UUID().uuidString
-    var item: String
+    var name: String
 }
 
 struct RecipeDetail: Decodable {

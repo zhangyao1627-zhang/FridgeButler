@@ -99,5 +99,34 @@ class GroceryViewModel: ObservableObject {
         }
     }
 
+    // Add a new ShoppingListItem
+    func addShoppingItem(_ item: ShoppingListItem) {
+        do {
+            let _ = try db.collection("shoppingItems").document(item.id).setData(from: item)
+        } catch {
+            print("Error adding shopping item: \(error)")
+        }
+    }
+
+    // Delete a ShoppingListItem
+    func deleteShoppingItem(at offsets: IndexSet) {
+        offsets.map { shoppingList[$0] }.forEach { item in
+            db.collection("shoppingItems").document(item.id).delete { error in
+                if let error = error {
+                    print("Error removing document: \(error)")
+                }
+            }
+        }
+    }
+
+    // Update a ShoppingListItem
+    func updateShoppingItem(_ item: ShoppingListItem) {
+        do {
+            let _ = try db.collection("shoppingItems").document(item.id).setData(from: item)
+        } catch {
+            print("Error updating shopping item: \(error)")
+        }
+    }
+
 }
 

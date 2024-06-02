@@ -6,38 +6,73 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 struct ShoppingListView: View {
+    @EnvironmentObject var viewModel: GroceryViewModel
     @State private var newItem: String = ""
-    @State private var shoppingList: [String] = []
+    @State private var showingAddItemSheet = false
 
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
+                List {
+                    ForEach(viewModel.shoppingList) { item in
+                        Text(item.name)
+                    }
+                    .onDelete(perform: deleteItems)
+                }
+                .navigationBarTitle("Shopping List")
+                .navigationBarItems(trailing: Button(action: {
+                    showingAddItemSheet = true
+                }) {
+                    Image(systemName: "plus")
+                        .foregroundColor(.blue)
+                        .font(.title)
+                })
+            }
+            .sheet(isPresented: $showingAddItemSheet) {
+                VStack {
+                    Text("Add New Item")
+                        .font(.headline)
+                        .padding()
+                    
                     TextField("Enter new item", text: $newItem)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-                    Button(action: addItem) {
-                        Image(systemName: "plus.circle.fill")
-                            .foregroundColor(.blue)
-                            .font(.title)
+                    
+                    HStack {
+                        Button("Add") {
+                            addItem()
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        
+                        Button("Cancel") {
+                            showingAddItemSheet = false
+                        }
+                        .padding()
+                        .background(Color.gray)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
                     }
                     .padding()
                 }
-                List {
-                    ForEach(shoppingList, id: \.self) { item in
-                        Text(item)
-                    }
-                }
-                .navigationBarTitle("Shopping List")
+                .padding()
             }
         }
     }
 
     private func addItem() {
         guard !newItem.isEmpty else { return }
-        shoppingList.append(newItem)
+        let newShoppingItem = ShoppingListItem(id: UUID().uuidString, name: newItem)
+        viewModel.addShoppingItem(newShoppingItem)
         newItem = ""
+    }
+
+    private func deleteItems(at offsets: IndexSet) {
+        viewModel.deleteShoppingItem(at: offsets)
     }
 }
