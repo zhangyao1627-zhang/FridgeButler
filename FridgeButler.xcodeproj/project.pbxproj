@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0254779D2C0CE47C001E346F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0254779C2C0CE47C001E346F /* GoogleService-Info.plist */; };
 		595A25062C040307009F0AB6 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595A25052C040307009F0AB6 /* DateModel.swift */; };
 		595A25082C040372009F0AB6 /* GroceryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595A25072C040372009F0AB6 /* GroceryViewModel.swift */; };
 		595A250A2C040553009F0AB6 /* GroceryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595A25092C040553009F0AB6 /* GroceryDetailView.swift */; };
@@ -14,7 +15,6 @@
 		595FB0AA2C04FBBE00BE3AB7 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FB0A92C04FBBE00BE3AB7 /* RecipeDetailsView.swift */; };
 		595FB0AC2C04FEC300BE3AB7 /* FetchRecipeDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FB0AB2C04FEC300BE3AB7 /* FetchRecipeDetailsData.swift */; };
 		595FB0AE2C04FED800BE3AB7 /* FetchRecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FB0AD2C04FED800BE3AB7 /* FetchRecipeData.swift */; };
-		5967F12A2C0CD1CB001183A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5967F1292C0CD1CB001183A8 /* GoogleService-Info.plist */; };
 		59908F472BFF0E89000C14A3 /* FridgeButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59908F462BFF0E89000C14A3 /* FridgeButlerApp.swift */; };
 		59908F492BFF0E89000C14A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59908F482BFF0E89000C14A3 /* ContentView.swift */; };
 		59908F4B2BFF0E8A000C14A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59908F4A2BFF0E8A000C14A3 /* Assets.xcassets */; };
@@ -30,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0254779C2C0CE47C001E346F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		25E1690B552838385B24B9DF /* Pods-FridgeButler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeButler.release.xcconfig"; path = "Target Support Files/Pods-FridgeButler/Pods-FridgeButler.release.xcconfig"; sourceTree = "<group>"; };
 		595A25052C040307009F0AB6 /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = SOURCE_ROOT; };
 		595A25072C040372009F0AB6 /* GroceryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryViewModel.swift; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.xcconfig; };
@@ -38,7 +39,6 @@
 		595FB0A92C04FBBE00BE3AB7 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		595FB0AB2C04FEC300BE3AB7 /* FetchRecipeDetailsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeDetailsData.swift; sourceTree = "<group>"; };
 		595FB0AD2C04FED800BE3AB7 /* FetchRecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeData.swift; sourceTree = "<group>"; };
-		5967F1292C0CD1CB001183A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59908F432BFF0E89000C14A3 /* FridgeButler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeButler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59908F462BFF0E89000C14A3 /* FridgeButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeButlerApp.swift; sourceTree = "<group>"; };
 		59908F482BFF0E89000C14A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,7 +70,6 @@
 		59908F3A2BFF0E89000C14A3 = {
 			isa = PBXGroup;
 			children = (
-				5967F1292C0CD1CB001183A8 /* GoogleService-Info.plist */,
 				59908F5A2BFF1060000C14A3 /* DataModels */,
 				59908F592BFF1056000C14A3 /* Views */,
 				59908F462BFF0E89000C14A3 /* FridgeButlerApp.swift */,
@@ -81,6 +80,7 @@
 				59908F4C2BFF0E8A000C14A3 /* Preview Content */,
 				59908F632BFF13A1000C14A3 /* .gitignore */,
 				59908F652BFF1414000C14A3 /* README.md */,
+				0254779C2C0CE47C001E346F /* GoogleService-Info.plist */,
 				59908F442BFF0E89000C14A3 /* Products */,
 				951B55B025E0C52515729639 /* Pods */,
 				E0A517C5EDC36B71628EA05B /* Frameworks */,
@@ -209,7 +209,7 @@
 			files = (
 				59908F4E2BFF0E8A000C14A3 /* Preview Assets.xcassets in Resources */,
 				59908F642BFF13A1000C14A3 /* .gitignore in Resources */,
-				5967F12A2C0CD1CB001183A8 /* GoogleService-Info.plist in Resources */,
+				0254779D2C0CE47C001E346F /* GoogleService-Info.plist in Resources */,
 				59908F662BFF1414000C14A3 /* README.md in Resources */,
 				59908F4B2BFF0E8A000C14A3 /* Assets.xcassets in Resources */,
 			);
@@ -412,7 +412,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
-				DEVELOPMENT_TEAM = 9Y5YH6S952;
+				DEVELOPMENT_TEAM = 6C2M2DGQA3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -442,7 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
-				DEVELOPMENT_TEAM = 9Y5YH6S952;
+				DEVELOPMENT_TEAM = 6C2M2DGQA3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
