@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct FridgeButlerApp: App {
     let persistenceController = PersistenceController.shared
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     var body: some Scene {
         WindowGroup {

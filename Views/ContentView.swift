@@ -8,22 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel = GroceryViewModel()
+    
     var body: some View {
         TabView {
             GroceryView()
                 .tabItem {
                     Label("Grocery", systemImage: "cart.fill")
                 }
+                .environmentObject(viewModel)
             
-            ReceiptView()
+            RecipeView()
                 .tabItem {
-                    Label("Receipt", systemImage: "doc.text.fill")
+                    Label("Recipt", systemImage: "doc.text.fill")
                 }
+                .environmentObject(viewModel)
             
             ShoppingListView()
                 .tabItem {
                     Label("Shopping List", systemImage: "list.bullet")
                 }
+                .environmentObject(viewModel)
+        }
+        .onAppear {
+            viewModel.fetchData()
         }
     }
 }
