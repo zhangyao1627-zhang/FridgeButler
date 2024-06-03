@@ -14,7 +14,6 @@ class GroceryViewModel: ObservableObject {
     @Published var groceryList: [GroceryListItem] = []
     @Published var receiptList: [RecipeListItem] = []
     @Published var shoppingList: [ShoppingListItem] = []
-    @Published var unusedGroceryNames: [String] = []
     @Published var historyList: [GroceryListItem] = []
     @Published var showAlert: Bool = false
     @Published var alertMsg: String = ""
@@ -26,7 +25,6 @@ class GroceryViewModel: ObservableObject {
         fetchGroceryItems()
         fetchReceiptItems()
         fetchShoppingItems()
-        fetchUnusedGroceryNames()
     }
 
     private func fetchGroceryItems() {
@@ -55,19 +53,6 @@ class GroceryViewModel: ObservableObject {
                 self.shoppingList = querySnapshot.documents.compactMap { document -> ShoppingListItem? in
                     try? document.data(as: ShoppingListItem.self)
                 }
-            }
-        }
-    }
-
-    private func fetchUnusedGroceryNames() {
-        db.collection("groceryItems").whereField("status", isEqualTo: "unused").getDocuments { (querySnapshot, error) in
-            if let querySnapshot = querySnapshot {
-                self.unusedGroceryNames = querySnapshot.documents.compactMap { document -> String? in
-                    let item = try? document.data(as: GroceryListItem.self)
-                    return item?.name
-                }
-            } else if let error = error {
-                print("Error getting documents: \(error)")
             }
         }
     }

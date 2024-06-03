@@ -32,7 +32,7 @@ struct RecipeView: View {
         }
         .navigationBarTitle("Recipes")
         .onAppear {
-            fetchData.fetchRecipes(ingredients: viewModel.unusedGroceryNames)
+            fetchData.fetchRecipes(ingredients: viewModel.groceryList.map { $0.name })
         }
     }
     
