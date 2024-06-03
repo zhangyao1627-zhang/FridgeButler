@@ -56,7 +56,7 @@ struct GroceryView: View {
                                 })
                             }
                         }
-                        .onDelete(perform: viewModel.deleteGroceryItem)
+                        .onDelete(perform: viewModel.deleteHistoryItem)
                     }
                 }
             }

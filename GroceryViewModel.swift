@@ -86,6 +86,23 @@ class GroceryViewModel: ObservableObject {
         }
     }
     
+    func deleteHistoryItem(at offsets: IndexSet) {
+        offsets.map { historyList[$0] }.forEach { item in
+            db.collection("groceryItems").document(item.id).delete { error in
+                if let error = error {
+                    print("Error removing document: \(error)")
+                } else {
+                    // Remove the item from the local list
+                    DispatchQueue.main.async {
+                        if let index = self.historyList.firstIndex(where: { $0.id == item.id }) {
+                            self.historyList.remove(at: index)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     // Update a GroceryListItem
     func updateGroceryItem(_ item: GroceryListItem) {
         do {
@@ -150,4 +167,3 @@ class GroceryViewModel: ObservableObject {
     }
 
 }
-

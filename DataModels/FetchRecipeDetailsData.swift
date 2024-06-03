@@ -16,7 +16,7 @@ class FetchRecipeDetailsData: ObservableObject {
     func fetchRecipeDetail(recipeId: Int) {
         self.isLoading = true
         self.errorMessage = nil
-        let urlString = "https://api.spoonacular.com/recipes/\(recipeId)/information?includeNutrition=false&apiKey=2c0dfbebbd064eeab2567ca61f6cd9db"
+        let urlString = "https://api.spoonacular.com/recipes/\(recipeId)/information?includeNutrition=false&apiKey=57b4f6ccb22b4877986dc66324f54c7f"
         
         guard let url = URL(string: urlString) else {
             self.errorMessage = "Invalid URL"
