@@ -15,6 +15,9 @@ class GroceryViewModel: ObservableObject {
     @Published var receiptList: [RecipeListItem] = []
     @Published var shoppingList: [ShoppingListItem] = []
     @Published var unusedGroceryNames: [String] = []
+    @Published var historyList: [GroceryListItem] = []
+    @Published var showAlert: Bool = false
+    @Published var alertMsg: String = ""
 
     private var db = Firestore.firestore()
 
@@ -109,6 +112,19 @@ class GroceryViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         if let index = self.groceryList.firstIndex(where: { $0.id == item.id }) {
                             self.groceryList[index] = item
+                        }
+                        if item.status == "used" || item.status == "wasted" {
+                            // Remove from groceryList and add to historyList
+                            if let index = self.groceryList.firstIndex(where: { $0.id == item.id }) {
+                                self.groceryList.remove(at: index)
+                                self.historyList.append(item)
+                            }
+
+                            // Show alert if status is "wasted"
+                            if item.status == "wasted" {
+                                self.alertMsg = "Please don't do this again. \(item.name) is sad."
+                                self.showAlert = true
+                            }
                         }
                     }
                 }

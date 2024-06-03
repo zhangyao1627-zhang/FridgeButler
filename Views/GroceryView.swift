@@ -16,12 +16,17 @@ struct GroceryView: View {
     var body: some View {
         NavigationView {
             List {
-                Section (header: VStack(alignment: .leading) {
-                    Text("Today's date is")
-                        .font(.headline)
-                    Text (todayDateString)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                Section(header: HStack {
+                    VStack(alignment: .leading) {
+                        Text("Current Inventory")
+                            .font(.headline)
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing) {
+                        Text(todayDateString)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
                 }.textCase (nil)) {
                     ForEach(viewModel.groceryList) { item in
                         NavigationLink(destination: GroceryDetailView(viewModel: viewModel, groceryItem: item)) {
@@ -34,6 +39,25 @@ struct GroceryView: View {
                         }
                     }
                     .onDelete(perform: viewModel.deleteGroceryItem)
+                }
+                
+                if !viewModel.historyList.isEmpty {
+                    // History Section
+                    Section(header: Text("History").font(.headline).textCase(nil)) {
+                        ForEach(viewModel.historyList) { item in
+                            HStack {
+                                VStack(alignment: .leading, content: {
+                                    Text(item.name)
+                                        .foregroundColor(.gray)
+                                })
+                                Spacer()
+                                VStack(alignment: .trailing, content: {
+                                    Text(item.status == "wasted" ? "😢" : "🎉")
+                                })
+                            }
+                        }
+                        .onDelete(perform: viewModel.deleteGroceryItem)
+                    }
                 }
             }
             
@@ -49,6 +73,12 @@ struct GroceryView: View {
             })
             .sheet(isPresented: $isPresentingAddGroceryItem) {
                 GroceryDetailView(viewModel: viewModel, groceryItem: GroceryListItem(name: "", quantity: 1, per: "", expirationDate: Date(), status: "unused"))
+            }
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(
+                    title: Text("Hey"),
+                    message: Text(viewModel.alertMsg),
+                    dismissButton: .default(Text("OK")))
             }
         }
     }
