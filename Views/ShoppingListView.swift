@@ -16,10 +16,9 @@ struct ShoppingListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 Text("Shopping List")
-                  .fontWeight(.bold)
-                  .modifier(TitleModifier())
+                    .fontWeight(.bold)
+                    .modifier(TitleModifier())
                 
                 List {
                     ForEach(viewModel.shoppingList) { item in
@@ -34,37 +33,51 @@ struct ShoppingListView: View {
                 })
             }
             .sheet(isPresented: $showingAddItemSheet) {
-                VStack {
-                    Text("Add New Item")
-                        .font(.headline)
-                        .padding()
-                    
-                    TextField("Enter new item", text: $newItem)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                    
-                    HStack {
-                        Button("Add") {
-                            addItem()
-                        }
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                        
-                        Button("Cancel") {
-                            showingAddItemSheet = false
-                        }
-                        .padding()
-                        .background(Color.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                    }
-                    .padding()
-                }
-                .padding()
+                AddItemView(showingSheet: $showingAddItemSheet, viewModel: viewModel)
             }
         }
+    }
+
+    private func deleteItems(at offsets: IndexSet) {
+        viewModel.deleteShoppingItem(at: offsets)
+    }
+}
+
+struct AddItemView: View {
+    @Binding var showingSheet: Bool
+    @EnvironmentObject var viewModel: GroceryViewModel
+    @State private var newItem: String = ""
+
+    var body: some View {
+        VStack {
+            Text("Add New Item")
+                .font(.headline)
+                .padding()
+            
+            TextField("Enter new item", text: $newItem)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            HStack {
+                Button("Add") {
+                    addItem()
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+                
+                Button("Cancel") {
+                    showingSheet = false
+                }
+                .padding()
+                .background(Color.gray)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+            }
+            .padding()
+        }
+        .padding()
     }
 
     private func addItem() {
@@ -72,9 +85,6 @@ struct ShoppingListView: View {
         let newShoppingItem = ShoppingListItem(id: UUID().uuidString, name: newItem)
         viewModel.addShoppingItem(newShoppingItem)
         newItem = ""
-    }
-
-    private func deleteItems(at offsets: IndexSet) {
-        viewModel.deleteShoppingItem(at: offsets)
+        showingSheet = false
     }
 }
