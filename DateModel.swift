@@ -19,6 +19,8 @@ struct GroceryListItem: Identifiable, Codable {
 struct RecipeListItem: Identifiable, Codable {
     var id: Int
     var title: String
+    var image: String
+    var likes: Int
     var usedIngredients: [String]
     var usedIngredientCount: Int
     var missedIngredients: [String]
@@ -30,6 +32,7 @@ struct RawRecipe: Codable {
     var id: Int
     var title: String
     var image: String
+    var likes: Int
     var usedIngredients: [Ingredient]
     var missedIngredients: [Ingredient]
 }

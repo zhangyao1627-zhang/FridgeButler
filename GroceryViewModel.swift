@@ -158,6 +158,7 @@ class GroceryViewModel: ObservableObject {
     func updateShoppingItem(_ item: ShoppingListItem) {
         do {
             let _ = try db.collection("shoppingItems").document(item.id).setData(from: item)
+            
         } catch {
             print("Error updating shopping item: \(error)")
         }

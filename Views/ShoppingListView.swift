@@ -16,19 +16,21 @@ struct ShoppingListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                Text("Shopping List")
+                  .fontWeight(.bold)
+                  .modifier(TitleModifier())
+                
                 List {
                     ForEach(viewModel.shoppingList) { item in
                         Text(item.name)
                     }
                     .onDelete(perform: deleteItems)
                 }
-                .navigationBarTitle("Shopping List")
                 .navigationBarItems(trailing: Button(action: {
                     showingAddItemSheet = true
                 }) {
                     Image(systemName: "plus")
-                        .foregroundColor(.blue)
-                        .font(.title)
                 })
             }
             .sheet(isPresented: $showingAddItemSheet) {

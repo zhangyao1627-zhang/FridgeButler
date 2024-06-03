@@ -37,6 +37,15 @@ struct ContentView: View {
     }
 }
 
+struct TitleModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .font(.system(.title, design: .serif))
+      .foregroundColor(.blue)
+      .padding(8)
+  }
+}
+
 #Preview {
     ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

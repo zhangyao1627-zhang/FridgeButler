@@ -15,6 +15,9 @@
 		595FB0AA2C04FBBE00BE3AB7 /* RecipeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FB0A92C04FBBE00BE3AB7 /* RecipeDetailsView.swift */; };
 		595FB0AC2C04FEC300BE3AB7 /* FetchRecipeDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FB0AB2C04FEC300BE3AB7 /* FetchRecipeDetailsData.swift */; };
 		595FB0AE2C04FED800BE3AB7 /* FetchRecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FB0AD2C04FED800BE3AB7 /* FetchRecipeData.swift */; };
+		59736E302C0D35E100CD3D1C /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59736E2F2C0D35E100CD3D1C /* RecipeCardView.swift */; };
+		59736E322C0D40C100CD3D1C /* RecipeCardLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59736E312C0D40C100CD3D1C /* RecipeCardLabelView.swift */; };
+		59736E342C0D449700CD3D1C /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59736E332C0D449700CD3D1C /* RecipeDetailView.swift */; };
 		59908F472BFF0E89000C14A3 /* FridgeButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59908F462BFF0E89000C14A3 /* FridgeButlerApp.swift */; };
 		59908F492BFF0E89000C14A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59908F482BFF0E89000C14A3 /* ContentView.swift */; };
 		59908F4B2BFF0E8A000C14A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59908F4A2BFF0E8A000C14A3 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		595FB0A92C04FBBE00BE3AB7 /* RecipeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsView.swift; sourceTree = "<group>"; };
 		595FB0AB2C04FEC300BE3AB7 /* FetchRecipeDetailsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeDetailsData.swift; sourceTree = "<group>"; };
 		595FB0AD2C04FED800BE3AB7 /* FetchRecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecipeData.swift; sourceTree = "<group>"; };
+		59736E2F2C0D35E100CD3D1C /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
+		59736E312C0D40C100CD3D1C /* RecipeCardLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardLabelView.swift; sourceTree = "<group>"; };
+		59736E332C0D449700CD3D1C /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		59908F432BFF0E89000C14A3 /* FridgeButler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeButler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59908F462BFF0E89000C14A3 /* FridgeButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeButlerApp.swift; sourceTree = "<group>"; };
 		59908F482BFF0E89000C14A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,7 +117,10 @@
 				59908F612BFF10CB000C14A3 /* ShoppingListView.swift */,
 				595A25092C040553009F0AB6 /* GroceryDetailView.swift */,
 				595FB0A72C04FB9600BE3AB7 /* RecipeView.swift */,
+				59736E2F2C0D35E100CD3D1C /* RecipeCardView.swift */,
+				59736E312C0D40C100CD3D1C /* RecipeCardLabelView.swift */,
 				595FB0A92C04FBBE00BE3AB7 /* RecipeDetailsView.swift */,
+				59736E332C0D449700CD3D1C /* RecipeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F0FC092BFFC1D5001E1BFE /* AppDelegate.swift in Sources */,
+				59736E322C0D40C100CD3D1C /* RecipeCardLabelView.swift in Sources */,
 				59908F532BFF0E8A000C14A3 /* FridgeButler.xcdatamodeld in Sources */,
 				59908F622BFF10CB000C14A3 /* ShoppingListView.swift in Sources */,
 				59908F5D2BFF10A6000C14A3 /* GroceryView.swift in Sources */,
@@ -275,9 +285,11 @@
 				595FB0AC2C04FEC300BE3AB7 /* FetchRecipeDetailsData.swift in Sources */,
 				595FB0A82C04FB9600BE3AB7 /* RecipeView.swift in Sources */,
 				595A250A2C040553009F0AB6 /* GroceryDetailView.swift in Sources */,
+				59736E302C0D35E100CD3D1C /* RecipeCardView.swift in Sources */,
 				595FB0AA2C04FBBE00BE3AB7 /* RecipeDetailsView.swift in Sources */,
 				59908F492BFF0E89000C14A3 /* ContentView.swift in Sources */,
 				59908F472BFF0E89000C14A3 /* FridgeButlerApp.swift in Sources */,
+				59736E342C0D449700CD3D1C /* RecipeDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

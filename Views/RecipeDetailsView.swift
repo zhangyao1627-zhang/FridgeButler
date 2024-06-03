@@ -8,6 +8,7 @@ import SwiftUI
 import UIKit
 
 struct RecipeDetailView: View {
+    
     let recipeId: Int
     @StateObject private var fetchData = FetchRecipeDetailsData()
 
@@ -101,23 +102,3 @@ class ImageLoader: ObservableObject {
 }
 
 
-struct HTMLTextR: View {
-    var html: String
-
-    var body: some View {
-        if let nsAttributedString = try? NSAttributedString(data: Data(html.utf8), options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil),
-           let attributedString = try? AttributedString(nsAttributedString) {
-            ScrollView {
-                Text(attributedString)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.body)
-            }
-        } else {
-            Text(html)
-                .padding()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.body)
-        }
-    }
-}
