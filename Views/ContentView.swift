@@ -41,7 +41,7 @@ struct TitleModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .font(.system(.title, design: .serif))
-      .foregroundColor(.blue)
+      .foregroundColor(.green)
       .padding(8)
   }
 }

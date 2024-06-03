@@ -28,7 +28,7 @@ struct RecipeCardView: View {
                       .font(Font.title.weight(.light))
                       .foregroundColor(Color.white)
                       .imageScale(.small)
-                      .shadow(color: .blue, radius: 2, x: 0, y: 0)
+                      .shadow(color: .green, radius: 2, x: 0, y: 0)
                       .padding(.trailing, 20)
                       .padding(.top, 22)
                     Spacer()
@@ -41,7 +41,7 @@ struct RecipeCardView: View {
           Text(recipe.title)
             .font(.system(.title, design: .serif))
             .fontWeight(.bold)
-            .foregroundColor(.blue)
+            .foregroundColor(.green)
             
           RecipeCardLabelView(recipe: recipe)
                 .environmentObject(viewModel)
@@ -51,7 +51,7 @@ struct RecipeCardView: View {
       }
       .background(Color.white)
       .cornerRadius(12)
-      .shadow(color: .blue, radius: 8, x: 0, y: 0)
+      .shadow(color: .green, radius: 8, x: 0, y: 0)
       .onTapGesture {
         self.showModal = true
       }

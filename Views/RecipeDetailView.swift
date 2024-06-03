@@ -45,7 +45,7 @@ struct RecipeCardDetailView: View {
                         .font(.system(.largeTitle, design: .serif))
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.blue)
+                        .foregroundColor(.green)
                         .padding(.top, 10)
                     
                     RecipeCardLabelView(recipe: recipe)
@@ -98,10 +98,10 @@ struct RecipeCardDetailView: View {
                     }) {
                         Text("Add Recipe")
                             .font(.system(size: 18, weight: .bold, design: .default))
-                            .foregroundColor(.white)
+                            .foregroundColor(.green)
                             .padding()
-                            .background(Capsule().fill(Color.blue))
-                            .shadow(color: .blue.opacity(0.3), radius: 10, x: 0, y: 5)
+                            .background(Capsule().fill(Color.white))
+                            .shadow(color: .green.opacity(0.3), radius: 10, x: 0, y: 5)
                     }
                     .padding(.top, 20)
                 }
