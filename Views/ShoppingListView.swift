@@ -15,10 +15,6 @@ struct ShoppingListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Shopping List")
-                    .fontWeight(.bold)
-                    .modifier(TitleModifier())
-                
                 List {
                     HStack {
                         TextField("Enter new item", text: $newItem, onCommit: addItem)
@@ -39,6 +35,7 @@ struct ShoppingListView: View {
                 .navigationBarTitle("Shopping List")
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
     private func addItem() {

@@ -81,6 +81,7 @@ struct GroceryView: View {
                     dismissButton: .default(Text("OK")))
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle()) 
     }
     
     private var todayDateString: String {

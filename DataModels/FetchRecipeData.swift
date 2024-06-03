@@ -14,7 +14,7 @@ class FetchRecipeData: ObservableObject {
     
     func fetchRecipes(ingredients: [String]) {
         let ingredientsString = ingredients.joined(separator: ",+")
-        let urlString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredientsString)&number=5&apiKey=2c0dfbebbd064eeab2567ca61f6cd9db"
+        let urlString = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=\(ingredientsString)&number=5&apiKey=57b4f6ccb22b4877986dc66324f54c7f"
         
         guard let url = URL(string: urlString) else {
             print("Invalid URL")

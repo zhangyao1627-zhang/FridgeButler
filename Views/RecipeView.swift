@@ -12,28 +12,27 @@ struct RecipeView: View {
     @EnvironmentObject var viewModel: GroceryViewModel
    
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            if fetchData.isLoading {
-                ProgressView("Loading...")
-            } else {
-                Text("Recipes")
-                  .fontWeight(.bold)
-                  .modifier(TitleModifier())
-
-                VStack(alignment: .center, spacing: 20) {
-                    ForEach(fetchData.recipes) { item in
-                        RecipeCardView(recipe: item)
-                            .environmentObject(viewModel)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                if fetchData.isLoading {
+                    ProgressView("Loading...")
+                } else {
+                    VStack(alignment: .center, spacing: 20) {
+                        ForEach(fetchData.recipes) { item in
+                            RecipeCardView(recipe: item)
+                                .environmentObject(viewModel)
+                        }
                     }
+                    .frame(maxWidth: 640)
+                    .padding(.horizontal)
                 }
-                .frame(maxWidth: 640)
-                .padding(.horizontal)
+            }
+            .navigationBarTitle("Recipes")
+            .onAppear {
+                fetchData.fetchRecipes(ingredients: viewModel.groceryList.map { $0.name })
             }
         }
-        .navigationBarTitle("Recipes")
-        .onAppear {
-            fetchData.fetchRecipes(ingredients: viewModel.groceryList.map { $0.name })
-        }
+        .navigationViewStyle(StackNavigationViewStyle()) 
     }
     
     private func addIngredientsToShoppingList(recipe: RecipeListItem) {
